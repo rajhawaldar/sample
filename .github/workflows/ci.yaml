@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: 
-        - '*'
+        - "main"
   pull_request:
     branches: ['*']
     
@@ -24,6 +24,3 @@ jobs:
 
     - name: Test
       run: go test -v ./...
-    
-    - name: False exit
-      run: exit 1
