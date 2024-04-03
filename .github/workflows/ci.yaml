@@ -13,10 +13,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: rajhawaldar/get-repo-size@v1.0
-      id: get-repo-size
-      with:
-        GITHUB_TOKEN: ${{secrets.MY_GITHUB_TOKEN}}
+    # - uses: rajhawaldar/get-repo-size@v1.0
+    #   id: get-repo-size
+    #   with:
+    #     GITHUB_TOKEN: ${{secrets.MY_GITHUB_TOKEN}}
 
     - name: Get Size of the repository
       run: |
