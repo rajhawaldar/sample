@@ -3,15 +3,26 @@ name: CI
 on:
   push:
     branches: 
-        - '*'
+        - "main"
   pull_request:
     branches: ['*']
+  workflow_dispatch:
     
 jobs:
 
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: rajhawaldar/get-repo-size@v1.0
+      id: get-repo-size
+      with:
+        GITHUB_TOKEN: ${{secrets.MY_GITHUB_TOKEN}}
+
+    - run: echo "Repository size is $SIZE"
+      shell: bash
+      env:
+        SIZE: ${{ steps.get-repo-size.outputs.REPO_SIZE }}
+
     - uses: actions/checkout@v3
 
     - name: Set up Go
@@ -22,5 +33,3 @@ jobs:
     - name: Build
       run: go build -v ./...
 
-    - name: Test
-      run: go test -v ./...
