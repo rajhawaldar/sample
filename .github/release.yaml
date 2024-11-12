@@ -1,0 +1,12 @@
+name: Release
+
+on:
+  release:
+    types: [created]
+
+env:
+  RELEASE: ${{github.event.release.tag}}
+jobs:
+  create-release:
+    
+  
