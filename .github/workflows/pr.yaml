@@ -2,7 +2,7 @@ name: "merge pull request"
 
 on:
     pull_request: 
-        types: [opened]
+        types: [opened,reopened,edited]
 
 permissions: write-all
 jobs:
