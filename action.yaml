@@ -11,9 +11,6 @@ outputs:
     description: 'The time we greeted you'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
-  env:
-    NAME: "Raj"
-    SEASON: "${{ env.SEASON }}"
+  image: 'hello-world:latest'
   args:
     - ${{ inputs.who-to-greet }}
