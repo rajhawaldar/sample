@@ -12,5 +12,5 @@ outputs:
 runs:
   using: 'docker'
   image: 'hello-world:latest'
-  args:
-    - ${{ inputs.who-to-greet }}
+  # args:
+    # - ${{ inputs.who-to-greet }}
