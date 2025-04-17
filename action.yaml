@@ -14,5 +14,6 @@ runs:
   image: 'Dockerfile'
   env:
     NAME: "Raj"
+    SEASON: "${{ env.SEASON }}"
   args:
     - ${{ inputs.who-to-greet }}

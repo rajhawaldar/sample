@@ -11,6 +11,8 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v4
+      - run: |
+          echo "SEASON=SUMMER" >> $GITHUB_ENV
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
         id: hello
