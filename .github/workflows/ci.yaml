@@ -7,12 +7,21 @@ on:
   pull_request:
     branches: ['*']
   workflow_dispatch:
+    inputs:
+      isOwner:
+        description: "sample owner"
+        required: false
+        tyoe boolean
     
 jobs:
 
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
+    - uses: ./.github/actions/test.yaml
+      with:
+        reportOnwer: ${{inputs.isOwner }}
     - uses: rajhawaldar/get-repo-size@v1.0
       id: get-repo-size
       with:
@@ -23,7 +32,6 @@ jobs:
       env:
         SIZE: ${{ steps.get-repo-size.outputs.REPO_SIZE }}
 
-    - uses: actions/checkout@v3
 
     - name: Set up Go
       uses: actions/setup-go@v4

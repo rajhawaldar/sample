@@ -1,0 +1,13 @@
+name: Test star
+
+inputs:
+  reportOnwer:
+    description: "sample input"
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - name: print
+      run: echo "$reportOnwer"
