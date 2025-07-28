@@ -11,6 +11,7 @@ on:
       isOwner:
         description: "sample owner"
         required: false
+        default: false
         type: boolean
     
 jobs:

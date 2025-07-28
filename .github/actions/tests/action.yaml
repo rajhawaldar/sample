@@ -4,7 +4,7 @@ inputs:
   reportOnwer:
     description: "sample input"
     required: false
-    default: true
+    default: "false"
   sec:
     description: "token"
     required: false
