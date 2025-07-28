@@ -5,6 +5,9 @@ inputs:
     description: "sample input"
     required: false
     default: "false"
+  sec:
+    description: "token"
+    required: false
 
 runs:
   using: composite
