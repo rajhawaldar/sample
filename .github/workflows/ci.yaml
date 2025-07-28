@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: ./.github/actions/tests
       with:
-        reportOnwer: ${{inputs.isOwner }}
+        reportOnwer: ${{ inputs.isOwner }}
     - uses: rajhawaldar/get-repo-size@v1.0
       id: get-repo-size
       with:
