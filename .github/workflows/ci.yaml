@@ -11,7 +11,7 @@ on:
       isOwner:
         description: "sample owner"
         required: false
-        tyoe boolean
+        type boolean
     
 jobs:
 
