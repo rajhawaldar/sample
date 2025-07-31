@@ -9,6 +9,8 @@ on:
 
 jobs:
   build:
+    runs-on: "ubuntu-latest"
     steps:
+    
     - name: "welcome"
       run: echo "Hello"
