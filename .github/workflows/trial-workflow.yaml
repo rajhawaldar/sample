@@ -1,0 +1,14 @@
+name: "Test workflow"
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    steps:
+    - name: "welcome"
+      run: echo "Hello"
