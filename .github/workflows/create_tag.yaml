@@ -8,7 +8,8 @@ on:
         type: string
         required: true
         description: "tag to use"
-
+permissions:
+  contents: write 
 jobs:
   tag:
     runs-on: ubuntu-latest
@@ -29,3 +30,4 @@ jobs:
         git tag -a ${{inputs.tag}} -m "my ${{inputs.tag}}"
         git push -u origin ${{github.ref}}
         git push --tags
+        
