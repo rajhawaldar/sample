@@ -1,0 +1,31 @@
+name: create tag
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        required: true
+        description: "tag to use"
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - run: |
+        echo "This is a change made by ${{ github.actor}}" >> new_file.txt
+    
+    - name: "setup git config and commit changes"
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "This is a new change"
+        git tag -a ${{inputs.tag}} -m "my ${{inputs.tag}}"
+        git push -u origin ${{github.ref}}
+        git push --tags
