@@ -1,0 +1,10 @@
+name: test workflow
+
+on:
+  workflow_dispatch
+
+jobs:
+  sample:
+    runs-on: ubuntu
+    steps:
+    - run: echo "The workflow run for ${{github.ref}}"
